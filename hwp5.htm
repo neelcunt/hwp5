@@ -5,15 +5,38 @@
 
   </head>
   <body>
-    <script >function setup() {
-  createCanvas(windowWidth, windowHeight);
+    <script >
+function setup() {
+  createCanvas(windowWidth, windowHeight)
+  g = createGraphics(69*2,20*2);
+  g.image(a, 0, 0, g.width, g.height)
 }
 
-function preload(){a = loadImage("hwp5.png");}
+
+function preload(){a = loadImage("https://raw.githubusercontent.com/neelcunt/hwp5/trunk/hwpf.png");
+                  }
 
 function draw() {
-  background(255);
-  for (i = 0; i<100; i++){point(random(width), random(height))}
+  background(0, 5)
+  strokeWeight(1.5);
+  g.loadPixels();
+  for (i = 0; i<69*20; i++)
+  {
+    x = random(width);
+    y = random(height);
+    imgxcor = floor(x/width*g.width);
+    imgycor = floor(y/height*g.height)
+    cor = (imgycor*g.width+imgxcor)*4;
+    r = g.pixels[cor];
+    gr = g.pixels[cor+1];
+    b = g.pixels[cor+2];
+    alph = g.pixels[cor+3];
+    if (r<255)
+      {
+      stroke(255,0,255);
+      point(x,y);
+      }
+  }
 }
 </script>
   </body>
