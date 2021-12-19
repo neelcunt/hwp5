@@ -1,5 +1,6 @@
 <html lang="en">
   <head>
+<style> body{background-color:#000000;}</style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <meta charset="utf-8" />
 
@@ -13,12 +14,12 @@ function setup() {
 }
 
 
-function preload(){a = loadImage("https://raw.githubusercontent.com/neelcunt/hwp5/trunk/hwpf.png");
+function preload(){a = loadImage("https://raw.githubusercontent.com/neelcunt/hwp5/trunk/ravi.png");
                   }
 
 function draw() {
   background(0, 5)
-  strokeWeight(1.5);
+  strokeWeight(1);
   g.loadPixels();
   for (i = 0; i<69*20; i++)
   {
@@ -33,7 +34,7 @@ function draw() {
     alph = g.pixels[cor+3];
     if (r<255)
       {
-      stroke(255,165,0);
+      stroke(255,0,0);
       point(x,y);
       }
   }
